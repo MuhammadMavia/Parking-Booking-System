@@ -1,0 +1,17 @@
+<h2>Feedback</h2>
+<div *ngFor="let f of feedbacks">
+  <h3>{{f.subject}}</h3>
+  <p>{{f.msg}}</p>
+  <small>{{f.time | date: 'hh:mm a'}}</small>
+  <hr>
+</div>
+<h2>Bookings</h2>
+<div *ngFor="let en of entries">
+  <ul>
+    <li>Parking name : {{ds.parkingAreas[en.selectedParkingAreaIndex].name}}</li>
+    <li>Slot : {{en.slot+1}}</li>
+    <li>From : {{en.startTime | date:'dd/MMM/yyyy hh:mm a'}}</li>
+    <li>Till : {{en.endTime | date:'dd/MMM/yyyy hh:mm a'}}</li>
+  </ul>
+  <hr>
+</div>

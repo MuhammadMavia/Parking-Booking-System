@@ -1,0 +1,10 @@
+<input placeholder="Subject" type="text" [(ngModel)]="feedback.subject"><br>
+<textarea placeholder="Message" [(ngModel)]="feedback.msg"></textarea><br>
+<button (click)="addFeedback()">Send</button>
+<hr>
+<div *ngFor="let f of feedbacks">
+  <h3>{{f.subject}}</h3>
+  <p>{{f.msg}}</p>
+  <small>{{f.time | date: 'hh:mm a'}}</small>
+  <hr>
+</div>

@@ -1,0 +1,28 @@
+<md-toolbar color="primary">Parking Booking System</md-toolbar>
+
+
+<md-grid-list cols="4" rowHeight="100px">
+  <md-grid-tile
+    *ngFor="let slot of ds.selectedParkingArea.slots;let i = index"
+    [colspan]="1"
+    [rowspan]="2">
+
+    <md-card class="">
+      <!--<md-card-header>-->
+      <!--<div md-card-avatar class="example-header-image"></div>-->
+      <!--<md-card-title>Shiba Inu</md-card-title>-->
+      <!--<md-card-subtitle>Dog Breed</md-card-subtitle>-->
+      <!--</md-card-header>-->
+      <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
+      <md-card-content>
+        <h2>{{i+1}}</h2>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button md-raised-button *ngIf="slot.reserved" color="warn">Booked</button>
+        <button md-button md-raised-button *ngIf="!slot.reserved" (click)="selectSlot(slot,i)" color="primary">Book Now</button>
+      </md-card-actions>
+    </md-card>
+
+
+  </md-grid-tile>
+</md-grid-list>

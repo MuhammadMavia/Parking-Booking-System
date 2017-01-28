@@ -1,0 +1,29 @@
+<md-grid-list cols="4" rowHeight="100px">
+  <md-grid-tile
+    *ngFor="let area of ds.parkingAreas;let i = index"
+    [colspan]="1"
+    [rowspan]="2">
+
+    <md-card class="">
+      <!--<md-card-header>-->
+      <!--<div md-card-avatar class="example-header-image"></div>-->
+      <!--<md-card-title>Shiba Inu</md-card-title>-->
+      <!--<md-card-subtitle>Dog Breed</md-card-subtitle>-->
+      <!--</md-card-header>-->
+      <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
+      <md-card-content>
+        <h2>{{area.name}}</h2>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button md-raised-button (click)="ds.selectedParkingArea = area;ds.selectedParkingAreaIndex = i" [routerLink]="['/select-date']"
+                [color]="'warn'">
+          Select Area
+        </button>
+      </md-card-actions>
+    </md-card>
+
+
+  </md-grid-tile>
+</md-grid-list>
+<button md-button md-raised-button routerLink="/giveFeedback">Give Feedback</button>
+<button md-button md-raised-button routerLink="/booking">View Booking</button>

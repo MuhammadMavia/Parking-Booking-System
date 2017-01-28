@@ -1,0 +1,14 @@
+<input type="date" [(ngModel)]="entry.date">
+
+<md-select [(ngModel)]="entry.startTime" placeholder="Start Time">
+  <md-option *ngFor="let t of timeArray" [value]="t">
+    {{ t }}
+  </md-option>
+</md-select>
+
+<md-select [(ngModel)]="entry.endTime" placeholder="End Time">
+  <md-option *ngFor="let t of timeArray" [value]="t">
+    {{ t }}
+  </md-option>
+</md-select>
+<button md-button routerLink="/dashboard" (click)="setNewEntryTime()">Done</button>

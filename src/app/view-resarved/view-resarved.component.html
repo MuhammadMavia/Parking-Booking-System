@@ -1,0 +1,9 @@
+<div *ngFor="let en of entries">
+  <ul>
+    <li>Parking name : {{ds.parkingAreas[en.selectedParkingAreaIndex].name}}</li>
+    <li>Slot : {{en.slot+1}}</li>
+    <li>From : {{en.startTime | date:'dd/MMM/yyyy hh:mm a'}}</li>
+    <li>Till : {{en.endTime | date:'dd/MMM/yyyy hh:mm a'}}</li>
+  </ul>
+  <hr>
+</div>
